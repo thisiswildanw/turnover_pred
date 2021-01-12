@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+{% block body %}
+
+
+<div class="container">
+{% if pred == 1%} 
+  <h2 class="font-weight-light text-center"> Karyawan bernama {{name}} diprediksi melakukan turnover </h2>
+{% else %} 
+  <h2 class="font-weight-light text-center"> Karyawan bernama {{name}} diprediksi tidak akan melakukan turnover</h2>
+{%endif%}
+  <br/>
+  <div class="col-xs-1" align="center">
+    <a type="button"href="{{ url_for('index') }}" class="btn btn-primary  text-center">
+    Kembali</a>
+  </div>
+</div>
+ 
+{% endblock %}

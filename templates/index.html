@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+{% block body %}
+ 
+<div class="container">
+<h1 class="font-weight-light text-center">Welcome to Turnover Prediction Simulation </h1>
+<br/>
+<div class="justify-content-center p-5" >
+  <form method="POST", action={{url_for('predict')}}>
+  	<div class="form-group row">
+		<div class="form-group col-md-6">
+      		<label >Employee Name</label>
+      		<input type="text" name='a' class="form-control" id="inputEmail4" placeholder="Employee Name">
+    	</div>
+    	<div class="form-group col-md-6">
+      		<label >Satisfication Level</label>
+      		<input type="number" class="form-control" id="inputPassword4" placeholder="Satisfication Level" min=0 max=1 maxlength=1 step="0.01" name='b' >
+    	</div>
+  </div>
+
+  	<div class="form-group row">
+    	<div class="form-group col-md-6">
+      		<label >Last Evaluation</label>
+      		<input type="number" class="form-control" id="inputPassword4" placeholder="Last Evaluation" min=0 max=1 maxlength=1 step="0.01" name='c'>
+    	</div>
+    	<div class="form-group col-md-6">
+      		<label >Number Project</label>
+      		<input type="number" class="form-control" id="inputPassword4" placeholder="Number Project" min=0 max=10 step="1" name='d'>
+    	</div>
+  </div>
+
+  	<div class="form-group row">
+    	<div class="form-group col-md-6">
+      		<label >Average Montly Hour</label>
+      		<input type="number" class="form-control" id="inputPassword4" placeholder="Average Montly Hour" min=50 max=500 maxlength=1 step="1" name='e'>
+    	</div>
+    	<div class="form-group col-md-6">
+      		<label >Time Spend Company</label>
+      		<input type="number" class="form-control" id="inputPassword4" placeholder="Time Spend Company" min=0 max=15 maxlength=1 step="1" name='f'>
+    	</div>
+  </div>
+
+  	<div class="form-group row">
+    	  <div class="form-group  col-md-6">
+    		<label for="exampleFormControlSelect1">Work Accident</label>
+    		<select class="form-control" id="exampleFormControlSelect1" name='g'>
+      			<option value="1">Yes</option>
+      			<option value="0" selected="selected">No</option>
+    		</select>
+  		</div>
+
+    	  <div class="form-group  col-md-6">
+    		<label for="exampleFormControlSelect1">Promotion Last 5  Year </label>
+    		<select class="form-control" id="exampleFormControlSelect1" name='h'>
+      			<option value="1">Yes</option>
+      			<option value="0" selected="selected">No</option>
+    		</select>
+  		</div>
+  	</div>
+
+  	<div class="form-group row">
+    	  <div class="form-group  col-md-6">
+    		<label for="exampleFormControlSelect1">Position</label>
+    		<select class="form-control" id="exampleFormControlSelect1" name='i'>
+      			<option value="1">IT</option>
+      			<option value="2">Research & Development</option>
+      			<option value="3">Accounting</option>
+      			<option value="4">Human Resource</option>
+      			<option value="5">Management</option>
+      			<option value="6">Marketing</option>
+      			<option value="7">Product Management</option>
+      			<option value="8" selected="selected">Sales</option>
+      			<option value="9">Support</option>
+      			<option value="10">Technical</option>
+    		</select>
+  		</div>
+
+    	  <div class="form-group col-md-6">
+    		<label for="exampleFormControlSelect1">Salary </label>
+    		<select class="form-control" id="exampleFormControlSelect1" name='j'>
+      			<option value="0" selected="selected">Low</option>
+      			<option value="2">Medium</option>
+      			<option value="1">High</option>
+    		</select>
+  		</div>
+  	</div>
+
+  	  	<div class="form-group row">
+    	  <div class="form-group  col-md-6"> 
+          <input type="submit" value="Predict" class="btn btn-primary">
+  		</div>
+  	</div>
+   </form>
+   
+</div>
+</div>
+ 
+{% endblock %}
